@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 
 // Importação do arquivo de estilos:
 import styles from '../styles/Style';
@@ -25,7 +25,7 @@ const slides = [
 ]
 
 
-export default Slider = () => {
+export default SliderScreen = ({ navigation }) => {
     const [showHome, setShowHome] = useState(false);
 
     
@@ -58,8 +58,14 @@ export default Slider = () => {
                 backgroundColor: '#1C7DB7',
             }}
             renderNextButton={ () => <Text>PROXIMO</Text>}
-            renderDoneButton={ () => <Text>INICIAR</Text>}
-            onDone={ () => alert('Entrando no App')} // Implementar aqui a navegação para a HomeScreen
+            renderDoneButton={ () => 
+                <Button
+                    onPress={() => navigation.navigate('Home')}
+                    title="Iniciar"
+                    color="#0E67B9"
+                    accessibilityLabel="Learn more about this purple button"
+                />
+            }
         />
     );
 }
