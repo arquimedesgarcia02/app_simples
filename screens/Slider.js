@@ -28,6 +28,10 @@ const slides = [
 export default SliderScreen = ({ navigation }) => {
     const [showHome, setShowHome] = useState(false);
 
+    function onPress() {
+        navigation.navigate('Home');
+        setShowHome(true);
+    }
     
     function renderSlides({ item }) {
         if (item.key == 1) {
@@ -60,7 +64,7 @@ export default SliderScreen = ({ navigation }) => {
             renderNextButton={ () => <Text>PROXIMO</Text>}
             renderDoneButton={ () => 
                 <Button
-                    onPress={() => navigation.navigate('Home')}
+                    onPress={onPress}
                     title="Iniciar"
                     color="#0E67B9"
                     accessibilityLabel="Learn more about this purple button"

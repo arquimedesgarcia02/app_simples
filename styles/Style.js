@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
         textAlign: "left",
 
     },
+    homeTitle: {
+        color: '#000000',
+        fontSize: 25,
+    },
     text: {
         fontSize: 25,
         color: '#000000',
